@@ -39,27 +39,42 @@ __NOTE:__ In the notebook, you will need to train CNNs in PyTorch.  If your CNN 
 
 
 
-## (Optionally) Accelerating the Training Process 
+**Create our local environment**
 
-If your code is taking too long to run, you will need to either reduce the complexity of your chosen CNN architecture or switch to running your code on a GPU.  If you'd like to use a GPU, you can spin up an instance of your own:
+1. Clone the repository, and navigate to the downloaded folder. This may take a minute or two to clone due to the included image data.
+```
+git clone https://github.com/udacity/deep-learning-v2-pytorch.git
+cd deep-learning-v2-pytorch
+```
 
-#### Amazon Web Services
+2. Create (and activate) a new environment, named `deep-learning` with Python 3.6. If prompted to proceed with the install `(Proceed [y]/n)` type y.
 
-You can use Amazon Web Services to launch an EC2 GPU instance. (This costs money, but enrolled students should see a coupon code in their student `resources`.)
+	- __Linux__ or __Mac__: 
+	```
+	conda create -n deep-learning python=3.6
+	source activate deep-learning
+	```
+	- __Windows__: 
+	```
+	conda create --name deep-learning python=3.6
+	activate deep-learning
+	```
+	
+	At this point your command line should look something like: `(deep-learning) <User>:deep-learning-v2-pytorch <user>$`. The `(deep-learning)` indicates that your environment has been activated, and you can proceed with further package installations.
 
-## Evaluation
+3. Install PyTorch and torchvision; this should install the latest version of PyTorch.
+	
+	- __Linux__ or __Mac__: 
+	```
+	conda install pytorch torchvision -c pytorch 
+	```
+	- __Windows__: 
+	```
+	conda install pytorch -c pytorch
+	pip install torchvision
+	```
 
-Your project will be reviewed by a Udacity reviewer against the CNN project rubric.  Review this rubric thoroughly and self-evaluate your project before submission.  All criteria found in the rubric must meet specifications for you to pass.
-
-
-## Project Submission
-
-Your submission should consist of the github link to your repository.  Your repository should contain:
-- The `dog_app.ipynb` file with fully functional code, all code cells executed and displaying output, and all questions answered.
-- An HTML or PDF export of the project notebook with the name `report.html` or `report.pdf`.
-
-Please do __NOT__ include any of the project data sets provided in the `dogImages/` or `lfw/` folders.
-
-### Ready to submit your project?
-
-Click on the "Submit Project" button in the classroom and follow the instructions to submit!
+6. Install a few required pip packages, which are specified in the requirements text file (including OpenCV).
+```
+pip install -r requirements.txt
+```
